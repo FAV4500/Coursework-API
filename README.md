@@ -1,3 +1,16 @@
+Overview of API Design
+This project implements a robust, lightweight RESTful API designed to manage machine learning workspaces and model lifecycles. Built using Java with the JAX-RS (Jersey) framework and an embedded Grizzly server, the architecture emphasizes modularity, data integrity, and strict adherence to REST principles.
+
+Key architectural highlights include:
+
+Sub-Resource Locators: Efficiently handles deep nesting for evaluation metrics without cluttering root resource classes.
+
+Leak-Proof Error Handling: Utilizes custom @Provider exception mappers to translate internal business logic violations into clean, actionable HTTP error payloads (400, 403, 500) without exposing raw stack traces.
+
+Observability: Implements custom container filters to log all incoming request methods/URIs and outgoing response statuses for easier debugging.
+
+Stateless Design: Ensures horizontal scalability by maintaining no client session state on the server, relying instead on clean identifier mapping.
+
 MLOps Pipeline Management API — Technical Report
 
 Student ID: W1947505
