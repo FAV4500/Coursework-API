@@ -1,4 +1,7 @@
 MLOps Pipeline Management API — Technical Report
+
+Student ID: W1947505
+
 Part 1: Service Architecture & Setup
 Question 1.1: Explain the role of a MessageBodyWriter or a JSON provider (like Jackson) in this conversion process.
 A MessageBodyWriter is a core JAX-RS provider interface responsible for converting Java objects into a low-level byte stream suitable for network transmission over HTTP. When a resource method returns a custom Java object (such as an ML entity), the JAX-RS runtime matches the media type specified in the @Produces annotation with an appropriate implementation. Jackson acts as this concrete JSON provider. It reads the Java class structure, maps fields through reflection or getters, converts the object data into a structured JSON string, and updates the outbound HTTP Content-Type header to application/json.
